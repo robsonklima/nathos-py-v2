@@ -1,18 +1,33 @@
+from google.cloud import translate
+import pymysql
 
-projects = DbProject.get_unclassified()
 
-for proj in projects:
-    DbCategory.delete_by_project_id(proj['project_id'])
-    categories = gapi_translate.classify_text(proj['description'])
+try:
+    db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
+    with db.cursor(pymysql.cursors.DictCursor) as cursor:
+        # Translate projects
+        sql = u"SELECT * FROM projects WHERE description_en IS NULL;"
+        cursor.execute(sql)
 
-    if categories:
-        for category in categories:
-            category_split = category['name'].split('/')
+        for i, p in enumerate(cursor.fetchall()):
+            translate_client = translate.Client()
+            translation = translate_client.translate(p['description'], target_language='en')
 
-            for cat in category_split:
-                if cat:
-                    DbCategory.insert(proj['project_id'], cat.strip(), category['confidence'])
+            q = u"UPDATE projects SET description_en=%s WHERE id=%s;"
+            cursor.execute(q, (translation['translatedText'], p['id']))
+            db.commit()
 
-    DbProject.update(proj['name'], proj['description'], proj['translated'], 1, proj['project_id'])
+        # Translate requirements
+        sql = u"SELECT * FROM requirements WHERE description_en IS NULL;"
+        cursor.execute(sql)
 
-print(u'{} Projects Classified'.format(len(projects)))
+        for i, r in enumerate(cursor.fetchall()):
+            translate_client = translate.Client()
+            translation = translate_client.translate(r['description'], target_language='en')
+
+            q = u"UPDATE requirements SET description_en=%s WHERE id=%s;"
+            cursor.execute(q, (translation['translatedText'], r['id']))
+            db.commit()
+    db.close()
+except Exception as ex:
+    print(ex.message)

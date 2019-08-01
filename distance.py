@@ -23,23 +23,21 @@ try:
         sql = u"TRUNCATE TABLE requirements_distance;"
         cursor.execute(sql)
 
-        sql = u"SELECT * FROM requirements;"
+        sql = u"SELECT * FROM requirements WHERE description_en IS NOT NULL;"
         cursor.execute(sql)
         requirements = cursor.fetchall()
 
         for i, req_a in enumerate(requirements):
-            sentence_a = req_a['description']
+            sentence_a = req_a['description_en']
             sentence_a = [w for w in sentence_a if w not in stop_words]
 
             for i, req_b in enumerate(requirements):
-                if req_a['id'] == req_b['id']:
-                    continue
-
-                sentence_b = req_b['description']
+                sentence_b = req_b['description_en']
                 sentence_b = [w for w in sentence_b if w not in stop_words]
-
                 distance = model.wmdistance(sentence_a, sentence_b)
-                print(distance)
+
+                if (distance == 0):
+                    continue
 
                 q = u"INSERT INTO requirements_distance (req_a_id, req_b_id, distance) VALUES (%s, %s, %s);"
                 cursor.execute(q, (req_a['id'], req_b['id'], distance))
