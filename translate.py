@@ -31,3 +31,5 @@ try:
     db.close()
 except Exception as ex:
     print(ex.message)
+finally:
+    print(u'translate done!')

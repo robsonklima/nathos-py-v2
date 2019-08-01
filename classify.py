@@ -28,3 +28,4 @@ try:
     db.close()
 except Exception as ex:
     print(ex)
+print(u'classify done!')

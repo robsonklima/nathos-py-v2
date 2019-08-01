@@ -45,3 +45,4 @@ try:
     db.close()
 except Exception as ex:
     print(ex.message)
+print(u'distance done!')
