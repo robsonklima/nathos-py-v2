@@ -2,9 +2,10 @@ from google.cloud import language
 from operator import attrgetter
 import pymysql
 
+user, password, database, host = 'root', 'root', 'nhatos_v2', '127.0.0.1'
 
 try:
-    db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
+    db = pymysql.connect(user=user, password=password, database=database, host=host)
     with db.cursor(pymysql.cursors.DictCursor) as cursor:
         sql = u"SELECT * FROM projects;"
         cursor.execute(sql)

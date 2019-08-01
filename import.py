@@ -3,8 +3,11 @@
 import pandas as pd
 import pymysql
 
+user, password, database, host = 'root', 'root', 'nhatos_v2', '127.0.0.1'
+
+
 try:
-    db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
+    db = pymysql.connect(user=user, password=password, database=database, host=host)
 
     with db.cursor() as cursor:
         q = u"TRUNCATE TABLE projects;"
@@ -19,7 +22,7 @@ df_projects = pd.ExcelFile(u'data/projects.xlsx').parse('projects')
 
 for i, r in df_projects.T.iteritems():
     try:
-        db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
+        db = pymysql.connect(user=user, password=password, database=database, host=host)
 
         with db.cursor() as cursor:
             q = u"INSERT INTO projects (code, title, description, domain, deadline, end, estimated_hours, hours_done)" \
@@ -34,7 +37,7 @@ for i, r in df_projects.T.iteritems():
 
 
 try:
-    db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
+    db = pymysql.connect(user=user, password=password, database=database, host=host)
 
     with db.cursor() as cursor:
         q = u"TRUNCATE TABLE requirements;"
@@ -49,7 +52,7 @@ df_requirements = pd.ExcelFile(u'data/requirements.xlsx').parse('requirements')
 
 for i, r in df_requirements.T.iteritems():
     try:
-        db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
+        db = pymysql.connect(user=user, password=password, database=database, host=host)
 
         with db.cursor() as cursor:
             q = u"INSERT INTO requirements (code, title, description)" \

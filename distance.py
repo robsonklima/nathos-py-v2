@@ -8,6 +8,7 @@ import pyemd
 from nltk.corpus import stopwords
 from nltk import download
 
+user, password, database, host = 'root', 'root', 'nhatos_v2', '127.0.0.1'
 
 try:
     dir = os.path.dirname(__file__)
@@ -18,7 +19,7 @@ try:
     model = gensim.models.KeyedVectors.load_word2vec_format(dir + file, binary=True) #limit=500000
     model.init_sims(replace=True)
 
-    db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
+    db = pymysql.connect(user=user, password=password, database=database, host=host)
     with db.cursor(pymysql.cursors.DictCursor) as cursor:
         sql = u"TRUNCATE TABLE requirements_distance;"
         cursor.execute(sql)

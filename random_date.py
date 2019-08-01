@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import pymysql
 import random
 import time
+import pymysql
+
+user, password, database, host = 'root', 'root', 'nhatos_v2', '127.0.0.1'
 
 
 def strTimeProp(start, end, format, prop):
@@ -18,7 +20,7 @@ def randomDate(start, end):
 
 
 try:
-    db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
+    db = pymysql.connect(user=user, password=password, database=database, host=host)
     with db.cursor(pymysql.cursors.DictCursor) as cursor:
         # Update projects date added randomly
         sql = u"SELECT * FROM projects;"
