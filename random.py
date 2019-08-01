@@ -20,6 +20,18 @@ def randomDate(start, end):
 try:
     db = pymysql.connect(user='root', password='root', database='nhatos_v2', host='127.0.0.1')
     with db.cursor(pymysql.cursors.DictCursor) as cursor:
+        # Update projects date added randomly
+        sql = u"SELECT * FROM projects;"
+        cursor.execute(sql)
+
+        for i, p in enumerate(cursor.fetchall()):
+            print (randomDate("2017-01-01 00:00:01", "2019-7-01 23:59:59"))
+
+            q = u"UPDATE projects SET added=%s WHERE id=%s;"
+            cursor.execute(q, (randomDate("2017-01-01 00:00:01", "2017-10-30 23:59:59"), p['id']))
+            db.commit()
+
+        # Update requirements date added randomly
         sql = u"SELECT * FROM requirements;"
         cursor.execute(sql)
 
