@@ -21,28 +21,34 @@ try:
 
     db = pymysql.connect(user=user, password=password, database=database, host=host)
     with db.cursor(pymysql.cursors.DictCursor) as cursor:
-        sql = u"TRUNCATE TABLE requirements_distance;"
-        cursor.execute(sql)
+        try:
+            sql = u"TRUNCATE TABLE requirements_distance;"
+            cursor.execute(sql)
+        except Exception as ex:
+            print(ex.message)
 
-        sql = u"SELECT * FROM requirements WHERE description_en IS NOT NULL;"
-        cursor.execute(sql)
-        requirements = cursor.fetchall()
+        try:
+            sql = u"SELECT * FROM requirements WHERE description_en IS NOT NULL;"
+            cursor.execute(sql)
+            requirements = cursor.fetchall()
 
-        for i, req_a in enumerate(requirements):
-            sentence_a = req_a['description_en']
-            sentence_a = [w for w in sentence_a if w not in stop_words]
+            for i, req_a in enumerate(requirements):
+                sentence_a = req_a['description_en']
+                sentence_a = [w for w in sentence_a if w not in stop_words]
 
-            for i, req_b in enumerate(requirements):
-                sentence_b = req_b['description_en']
-                sentence_b = [w for w in sentence_b if w not in stop_words]
-                distance = model.wmdistance(sentence_a, sentence_b)
+                for i, req_b in enumerate(requirements):
+                    sentence_b = req_b['description_en']
+                    sentence_b = [w for w in sentence_b if w not in stop_words]
+                    distance = model.wmdistance(sentence_a, sentence_b)
 
-                if (distance == 0):
-                    continue
+                    if (distance == 0):
+                        continue
 
-                q = u"INSERT INTO requirements_distance (req_a_id, req_b_id, distance) VALUES (%s, %s, %s);"
-                cursor.execute(q, (req_a['id'], req_b['id'], distance))
-                db.commit()
+                    q = u"INSERT INTO requirements_distance (req_a_id, req_b_id, distance) VALUES (%s, %s, %s);"
+                    cursor.execute(q, (req_a['id'], req_b['id'], distance))
+                    db.commit()
+        except Exception as ex:
+            print(ex.message)
     db.close()
 except Exception as ex:
     print(ex.message)

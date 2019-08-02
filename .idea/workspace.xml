@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d889f3b-2fad-45e1-a1c2-88f0d47a250d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/queries/find_requirements_without_project.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queries/queries.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classify.py" beforeDir="false" afterPath="$PROJECT_DIR$/classify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/distance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/random.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_date.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/translate.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="classify.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classify.py">
+      <file leaf-file-name="distance.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/distance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="645">
+              <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+              <folding>
+                <element signature="n#!!doc" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,11 +65,11 @@
         <option value="$PROJECT_DIR$/gapi_translate.py" />
         <option value="$PROJECT_DIR$/a.py" />
         <option value="$PROJECT_DIR$/random.py" />
-        <option value="$PROJECT_DIR$/translate.py" />
         <option value="$PROJECT_DIR$/random_date.py" />
-        <option value="$PROJECT_DIR$/import.py" />
-        <option value="$PROJECT_DIR$/distance.py" />
         <option value="$PROJECT_DIR$/classify.py" />
+        <option value="$PROJECT_DIR$/import.py" />
+        <option value="$PROJECT_DIR$/translate.py" />
+        <option value="$PROJECT_DIR$/distance.py" />
       </list>
     </option>
   </component>
@@ -103,6 +105,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/queries" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/data" />
@@ -120,7 +125,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.translate">
+  <component name="RunManager" selected="Python.random_date">
     <configuration name="a" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="nhatos-py-v2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,8 +245,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.translate" />
         <item itemvalue="Python.random_date" />
+        <item itemvalue="Python.translate" />
         <item itemvalue="Python.a" />
         <item itemvalue="Python.classify" />
         <item itemvalue="Python.distance" />
@@ -294,7 +299,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564701027435</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactoring">
+      <created>1564702017398</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1564702017398</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactoring">
+      <created>1564702192928</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1564702192928</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -324,11 +343,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactoring" />
     <MESSAGE value="Remove key directory" />
     <MESSAGE value="Classify" />
     <MESSAGE value="projects date added randomly" />
-    <option name="LAST_COMMIT_MESSAGE" value="projects date added randomly" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/import_csv.py">
@@ -359,53 +378,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/translate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" selection-start-line="33" selection-end-line="34" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/import.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#47#66#0" expanded="true" />
-            <marker date="1564599847393" expanded="true" signature="54:60" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/random_date.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="31" />
+        <state relative-caret-position="75">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="73" />
           <folding>
             <element signature="n#!!doc" />
-            <element signature="e#47#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/distance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="47" selection-start-line="47" selection-end-line="47" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" />
+            <element signature="e#47#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="75">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/import.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="73" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#47#66#0" expanded="true" />
+            <marker date="1564702158798" expanded="true" signature="54:60" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="73" selection-start-line="3" selection-start-column="73" selection-end-line="3" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc" />
+          </folding>
         </state>
       </provider>
     </entry>
