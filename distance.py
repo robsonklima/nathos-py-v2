@@ -7,49 +7,29 @@ import gensim
 import pyemd
 from nltk.corpus import stopwords
 from nltk import download
+from db_helper import DBHelper
 
-user, password, database, host = 'root', 'root', 'nhatos_v2', '127.0.0.1'
 
-try:
-    dir = os.path.dirname(__file__)
-    download(u'stopwords', quiet=True)
-    stop_words = set(stopwords.words(u'english'))
-    file = u'/data/GoogleNews-vectors-negative300.bin.gz'
+dir = os.path.dirname(__file__)
+download(u'stopwords', quiet=True)
+stop_words = set(stopwords.words(u'english'))
+file = u'/data/GoogleNews-vectors-negative300.bin.gz'
+model = gensim.models.KeyedVectors.load_word2vec_format(dir + file, binary=True) #limit=500000
+model.init_sims(replace=True)
 
-    model = gensim.models.KeyedVectors.load_word2vec_format(dir + file, binary=True) #limit=500000
-    model.init_sims(replace=True)
+DBHelper().execute(u"TRUNCATE TABLE requirements_distance;")
+requirements = DBHelper().fetch(u"SELECT * FROM requirements WHERE description_en IS NOT NULL;")
 
-    db = pymysql.connect(user=user, password=password, database=database, host=host)
-    with db.cursor(pymysql.cursors.DictCursor) as cursor:
-        try:
-            sql = u"TRUNCATE TABLE requirements_distance;"
-            cursor.execute(sql)
-        except Exception as ex:
-            print(ex.message)
+for i, req_a in enumerate(requirements):
+    sentence_a = req_a['description_en']
+    sentence_a = [w for w in sentence_a if w not in stop_words]
 
-        try:
-            sql = u"SELECT * FROM requirements WHERE description_en IS NOT NULL;"
-            cursor.execute(sql)
-            requirements = cursor.fetchall()
+    for i, req_b in enumerate(requirements):
+        sentence_b = req_b['description_en']
+        sentence_b = [w for w in sentence_b if w not in stop_words]
+        distance = model.wmdistance(sentence_a, sentence_b)
 
-            for i, req_a in enumerate(requirements):
-                sentence_a = req_a['description_en']
-                sentence_a = [w for w in sentence_a if w not in stop_words]
+        if (distance == 0): continue
 
-                for i, req_b in enumerate(requirements):
-                    sentence_b = req_b['description_en']
-                    sentence_b = [w for w in sentence_b if w not in stop_words]
-                    distance = model.wmdistance(sentence_a, sentence_b)
-
-                    if (distance == 0):
-                        continue
-
-                    q = u"INSERT INTO requirements_distance (req_a_id, req_b_id, distance) VALUES (%s, %s, %s);"
-                    cursor.execute(q, (req_a['id'], req_b['id'], distance))
-                    db.commit()
-        except Exception as ex:
-            print(ex.message)
-    db.close()
-except Exception as ex:
-    print(ex.message)
-print(u'distance done!')
+        DBHelper().execute(u"INSERT INTO requirements_distance (req_a_id, req_b_id, distance) "
+                           u"VALUES (%s, %s, %s);" % (req_a['id'], req_b['id'], distance))

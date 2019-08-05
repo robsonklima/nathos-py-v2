@@ -1,32 +1,21 @@
 from google.cloud import language
 from operator import attrgetter
-import pymysql
+from db_helper import DBHelper
 
-user, password, database, host = 'root', 'root', 'nhatos_v2', '127.0.0.1'
 
 try:
-    db = pymysql.connect(user=user, password=password, database=database, host=host)
-    with db.cursor(pymysql.cursors.DictCursor) as cursor:
-        sql = u"SELECT * FROM projects;"
-        cursor.execute(sql)
+    projects = DBHelper().fetch(u'SELECT * FROM projects WHERE domain IS NULL;')
 
-        for i, p in enumerate(cursor.fetchall()):
-            try:
-                language_client = language.LanguageServiceClient()
-                document = language.types.Document(
-                    content=p['description_en'],
-                    type=language.enums.Document.Type.PLAIN_TEXT)
-                response = language_client.classify_text(document)
-                categories = response.categories
+    for i, p in enumerate(projects):
+        language_client = language.LanguageServiceClient()
+        document = language.types.Document(content=p['description_en'], type=language.enums.Document.Type.PLAIN_TEXT)
+        response = language_client.classify_text(document)
+        categories = response.categories
 
-                if (len(categories) > 0):
-                    category = max(categories, key=attrgetter('confidence'))
-                    q = u"UPDATE projects SET domain=%s WHERE id=%s;"
-                    cursor.execute(q, (category.name, p['id']))
-                    db.commit()
-            except Exception as ex:
-                print(ex.message)
-    db.close()
+        if (len(categories) > 0):
+            category = max(categories, key=attrgetter('confidence'))
+            DBHelper().execute(u"UPDATE projects SET domain='%s' WHERE id=%s;" % (category.name, p['id']))
 except Exception as ex:
     print(ex)
-print(u'classify done!')
+finally:
+    print(u'classify done!')

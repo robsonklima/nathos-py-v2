@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 import random
 import time
-import pymysql
-
-user, password, database, host = 'root', 'root', 'nhatos_v2', '127.0.0.1'
+from db_helper import DBHelper
 
 
 def strTimeProp(start, end, format, prop):
@@ -14,35 +12,18 @@ def strTimeProp(start, end, format, prop):
 
     return time.strftime(format, time.localtime(ptime))
 
-
 def randomDate(start, end):
     return strTimeProp(start, end, '%Y-%m-%d %H:%M:%S', random.random())
 
 
-try:
-    db = pymysql.connect(user=user, password=password, database=database, host=host)
-    with db.cursor(pymysql.cursors.DictCursor) as cursor:
-        # Update projects date added randomly
-        sql = u"SELECT * FROM projects;"
-        cursor.execute(sql)
-        projects = cursor.fetchall()
+projects = DBHelper().fetch(u'SELECT * FROM projects;')
 
-        for i, p in enumerate(projects):
-            q = u"UPDATE projects SET added=%s WHERE id=%s;"
-            cursor.execute(q, (randomDate("2017-01-01 00:00:01", "2017-10-30 23:59:59"), p['id']))
-            db.commit()
+for i, p in enumerate(projects):
+    DBHelper().execute(u"UPDATE projects SET added='%s' WHERE id=%s;" %
+                       randomDate("2017-01-01 00:00:01", "2017-10-30 23:59:59"), p['id'])
 
-        # Update requirements date added randomly
-        sql = u"SELECT * FROM requirements;"
-        cursor.execute(sql)
-        requirements = cursor.fetchall()
+requirements = DBHelper().fetch(u'SELECT * FROM requirements;')
 
-        for i, r in enumerate(requirements):
-            q = u"UPDATE requirements SET added=%s WHERE id=%s;"
-            cursor.execute(q, (randomDate("2017-01-01 00:00:01", "2019-7-1 23:59:59"), r['id']))
-            db.commit()
-    db.close()
-except Exception as ex:
-    print(ex)
-finally:
-    print(u'random_date done!')
+for i, r in enumerate(requirements):
+    DBHelper().execute(u"UPDATE requirements SET added='%s' WHERE id=%s;" %
+                       randomDate("2017-01-01 00:00:01", "2017-10-30 23:59:59"), r['id'])
