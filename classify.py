@@ -8,7 +8,8 @@ try:
 
     for i, p in enumerate(projects):
         language_client = language.LanguageServiceClient()
-        document = language.types.Document(content=p['description_en'], type=language.enums.Document.Type.PLAIN_TEXT)
+        document = language.types.Document(content=p['description_en'],
+                                           type=language.enums.Document.Type.PLAIN_TEXT)
         response = language_client.classify_text(document)
         categories = response.categories
 
