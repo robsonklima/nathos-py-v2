@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d889f3b-2fad-45e1-a1c2-88f0d47a250d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/compare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_helper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,20 +14,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="compare.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/compare.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            <state relative-caret-position="144">
+              <caret line="61" column="99" selection-start-line="61" selection-start-column="98" selection-end-line="61" selection-end-column="99" />
               <folding>
                 <element signature="n#!!doc" />
-                <element signature="e#111#254#0" />
-                <element signature="e#319#462#0" />
-                <element signature="e#221#272#0" />
-                <element signature="e#329#399#0" />
-                <element signature="e#316#396#0" />
-                <element signature="e#668#695#0" />
+                <element signature="e#143#286#0" />
+                <element signature="e#319#467#0" />
+                <element signature="e#497#548#0" />
+                <element signature="e#590#670#0" />
+                <element signature="e#712#792#0" />
+                <element signature="e#849#1043#0" />
+                <element signature="e#1145#1337#0" />
               </folding>
             </state>
           </provider>
@@ -45,6 +48,9 @@
       <find>pymysql</find>
       <find>pandas</find>
       <find>random_date</find>
+      <find>rec</find>
+      <find>comm</find>
+      <find>sample</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -77,8 +83,8 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/distance.py" />
         <option value="$PROJECT_DIR$/import.py" />
-        <option value="$PROJECT_DIR$/db_helper.py" />
         <option value="$PROJECT_DIR$/classify.py" />
+        <option value="$PROJECT_DIR$/db_helper.py" />
         <option value="$PROJECT_DIR$/compare.py" />
       </list>
     </option>
@@ -135,7 +141,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.compare">
+  <component name="RunManager" selected="Python.recommendation">
     <configuration name="classify" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="nhatos-py-v2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,24 +161,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="compare" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="nhatos-py-v2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/compare.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="random_date" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="nhatos-py-v2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,6 +174,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/random_date.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="recommendation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nhatos-py-v2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recommendation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -231,13 +237,13 @@
     <list>
       <item itemvalue="Python.random_date" />
       <item itemvalue="Python.translate" />
-      <item itemvalue="Python.compare" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.classify" />
+      <item itemvalue="Python.recommendation" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.compare" />
+        <item itemvalue="Python.recommendation" />
         <item itemvalue="Python.classify" />
         <item itemvalue="Python.translate" />
         <item itemvalue="Python.test" />
@@ -340,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565111065200</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Refactoring">
+      <created>1565112130626</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1565112130626</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -350,7 +363,7 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1683876" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32911393" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" weight="0.29588607" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.2943038" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -375,16 +388,33 @@
     <MESSAGE value="projects date added randomly" />
     <MESSAGE value="Refactoring: included DBHelper" />
     <MESSAGE value="included SQL folder" />
-    <MESSAGE value="Refactoring" />
     <MESSAGE value="Compare" />
-    <option name="LAST_COMMIT_MESSAGE" value="Compare" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/compare.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#143#286#0" />
+            <element signature="e#319#467#0" />
+            <element signature="e#497#548#0" />
+            <element signature="e#590#670#0" />
+            <element signature="e#712#792#0" />
+            <element signature="e#849#1043#0" />
+            <element signature="e#1145#1337#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/import_csv.py" />
     <entry file="file://$PROJECT_DIR$/gapi_key/gapi_key.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -394,27 +424,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/a.py" />
-    <entry file="file://$PROJECT_DIR$/project.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project.py" />
+    <entry file="file://$PROJECT_DIR$/connection.py" />
     <entry file="file://$PROJECT_DIR$/random_date.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#47#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -422,11 +437,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/import.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/distance.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -438,55 +474,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/import.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="n#!!doc" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state relative-caret-position="249">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/compare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        <state relative-caret-position="144">
+          <caret line="61" column="99" selection-start-line="61" selection-start-column="98" selection-end-line="61" selection-end-column="99" />
           <folding>
             <element signature="n#!!doc" />
-            <element signature="e#111#254#0" />
-            <element signature="e#319#462#0" />
-            <element signature="e#221#272#0" />
-            <element signature="e#329#399#0" />
-            <element signature="e#316#396#0" />
-            <element signature="e#668#695#0" />
+            <element signature="e#143#286#0" />
+            <element signature="e#319#467#0" />
+            <element signature="e#497#548#0" />
+            <element signature="e#590#670#0" />
+            <element signature="e#712#792#0" />
+            <element signature="e#849#1043#0" />
+            <element signature="e#1145#1337#0" />
           </folding>
         </state>
       </provider>

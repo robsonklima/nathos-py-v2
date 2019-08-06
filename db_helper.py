@@ -25,4 +25,5 @@ class DBHelper:
     def execute(self, sql):
         self.__connect__()
         self.cur.execute(sql)
+        self.con.commit()
         self.__disconnect__()
