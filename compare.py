@@ -38,31 +38,24 @@ def get_requirements_distance(req_a_id, req_b_id):
     return None
 
 
-project = get_project_by_rand()
+prj = get_project_by_id(12)
+requirements = get_requirements_by_code(prj['code'])
+projects_to_compare = get_projects_by_domain(prj['domain'])
 
-print(project)
-project_requirements = get_requirements_by_code(project['code'])
+for i, pc in enumerate(projects_to_compare):
+    if (prj['id'] == pc['id']): continue
 
-projects = get_projects_by_domain(project['domain'])
+    requirements_to_compare = get_requirements_by_code(pc['code'])
+    r = min(len(requirements), len(requirements_to_compare))
 
-if(project):
-    for i, p in enumerate(projects):
-        if (project['id'] == p['id']):
-            continue
+    for i in range(r-1):
+        distance = get_requirements_distance(requirements[i]['id'], requirements_to_compare[i]['id'])
 
-        requirements = get_requirements_by_code(p['code'])
-        r = min(len(project_requirements), len(requirements))
+        if (distance['distance'] < 0.3): c += 1
+        else : c = 0
 
-        c = 0
-        for i in range(r-1):
-            dis = get_requirements_distance(project_requirements[i]['id'], requirements[i]['id'])
-            #print(dis)
+        print(c)
 
-            if (dis['distance'] < 0.3):
-                c = c + 1
-            else :
-                c = 0
-
-            if (c == 3):
-                c = 0
-                print(requirements[i+1]['title'])
+        if (c == 3):
+            c = 0
+            print(requirements[i+1]['title'])
