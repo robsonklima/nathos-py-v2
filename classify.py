@@ -4,7 +4,7 @@ from db_helper import DBHelper
 
 
 try:
-    projects = DBHelper().fetch(u'SELECT * FROM projects WHERE domain IS NULL;')
+    projects = DBHelper().fetch(u"SELECT * FROM projects WHERE domain IS NULL OR domain = '';")
 
     for i, p in enumerate(projects):
         language_client = language.LanguageServiceClient()

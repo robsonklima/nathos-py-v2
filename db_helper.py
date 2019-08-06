@@ -8,9 +8,8 @@ class DBHelper:
         self.db = "nhatos_v2"
 
     def __connect__(self):
-        self.con = pymysql.connect(host=self.host, user=self.user,
-                                   password=self.password, db=self.db,
-                                   cursorclass=pymysql.cursors.DictCursor)
+        self.con = pymysql.connect(host=self.host, user=self.user, password=self.password,
+                                   db=self.db, cursorclass=pymysql.cursors.DictCursor)
         self.cur = self.con.cursor()
 
     def __disconnect__(self):
