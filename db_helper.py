@@ -1,5 +1,6 @@
 import pymysql
 
+
 class DBHelper:
     def __init__(self):
         self.host = "127.0.0.1"
@@ -23,7 +24,10 @@ class DBHelper:
         return result
 
     def execute(self, sql):
-        self.__connect__()
-        self.cur.execute(sql)
-        self.con.commit()
-        self.__disconnect__()
+        try:
+            self.__connect__()
+            self.cur.execute(sql)
+            self.con.commit()
+            self.__disconnect__()
+        except Exception as ex:
+            print(ex.message)

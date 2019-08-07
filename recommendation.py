@@ -70,4 +70,7 @@ for i, prj in enumerate(projects):
             if (counter == steps):
                 counter = 0
                 insert_recommendation(prj['id'], requirements[i+1]['id'], requirements[i]['added'], sample, steps)
-                print(u'rec : %s' % requirements[i+1]['id'])
+                print(u'rec : %s' % requirements[i + 1]['id'])
+
+
+

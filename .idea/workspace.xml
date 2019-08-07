@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7d889f3b-2fad-45e1-a1c2-88f0d47a250d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/compare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendation.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommendation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,21 +15,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="compare.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compare.py">
+      <file leaf-file-name="recommendation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recommendation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="61" column="99" selection-start-line="61" selection-start-column="98" selection-end-line="61" selection-end-column="99" />
+            <state>
+              <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
               <folding>
                 <element signature="n#!!doc" />
                 <element signature="e#143#286#0" />
                 <element signature="e#319#467#0" />
                 <element signature="e#497#548#0" />
-                <element signature="e#590#670#0" />
-                <element signature="e#712#792#0" />
-                <element signature="e#849#1043#0" />
-                <element signature="e#1145#1337#0" />
+                <element signature="e#590#685#0" />
+                <element signature="e#727#807#0" />
+                <element signature="e#864#1058#0" />
+                <element signature="e#1154#1378#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_helper.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db_helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -61,7 +70,7 @@
     <setting file="file://$PROJECT_DIR$/translate.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/test.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/classify.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/compare.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/recommendation.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/distance.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/random_date.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/import.py" root0="SKIP_INSPECTION" />
@@ -84,15 +93,17 @@
         <option value="$PROJECT_DIR$/distance.py" />
         <option value="$PROJECT_DIR$/import.py" />
         <option value="$PROJECT_DIR$/classify.py" />
-        <option value="$PROJECT_DIR$/db_helper.py" />
         <option value="$PROJECT_DIR$/compare.py" />
+        <option value="$PROJECT_DIR$/recommendation.py" />
+        <option value="$PROJECT_DIR$/db_helper.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="307" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="729" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -102,6 +113,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,7 +125,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,9 +248,9 @@
     <list>
       <item itemvalue="Python.random_date" />
       <item itemvalue="Python.translate" />
+      <item itemvalue="Python.recommendation" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.classify" />
-      <item itemvalue="Python.recommendation" />
     </list>
     <recent_temporary>
       <list>
@@ -353,23 +364,30 @@
       <option name="project" value="LOCAL" />
       <updated>1565112130626</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Refactoring">
+      <created>1565127051109</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1565127051109</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="729" extended-state="6" />
+    <frame x="307" y="23" width="1280" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1683876" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32911393" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.2943038" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.20417124" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -398,7 +416,24 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/compare.py">
+    <entry file="file://$PROJECT_DIR$/recommendation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#143#286#0" />
+            <element signature="e#319#467#0" />
+            <element signature="e#497#548#0" />
+            <element signature="e#590#685#0" />
+            <element signature="e#727#807#0" />
+            <element signature="e#864#1058#0" />
+            <element signature="e#1154#1378#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recommendation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
           <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
@@ -407,10 +442,10 @@
             <element signature="e#143#286#0" />
             <element signature="e#319#467#0" />
             <element signature="e#497#548#0" />
-            <element signature="e#590#670#0" />
-            <element signature="e#712#792#0" />
-            <element signature="e#849#1043#0" />
-            <element signature="e#1145#1337#0" />
+            <element signature="e#590#685#0" />
+            <element signature="e#727#807#0" />
+            <element signature="e#864#1058#0" />
+            <element signature="e#1154#1378#0" />
           </folding>
         </state>
       </provider>
@@ -468,33 +503,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recommendation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
           <folding>
             <element signature="n#!!doc" />
+            <element signature="e#143#286#0" />
+            <element signature="e#319#467#0" />
+            <element signature="e#497#548#0" />
+            <element signature="e#590#685#0" />
+            <element signature="e#727#807#0" />
+            <element signature="e#864#1058#0" />
+            <element signature="e#1154#1378#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="61" column="99" selection-start-line="61" selection-start-column="98" selection-end-line="61" selection-end-column="99" />
-          <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#143#286#0" />
-            <element signature="e#319#467#0" />
-            <element signature="e#497#548#0" />
-            <element signature="e#590#670#0" />
-            <element signature="e#712#792#0" />
-            <element signature="e#849#1043#0" />
-            <element signature="e#1145#1337#0" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
