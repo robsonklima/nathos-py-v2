@@ -1,0 +1,1 @@
+ALTER TABLE recommendations ADD CONSTRAINT prj_req PRIMARY KEY (project_id, requirement_id);
