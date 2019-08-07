@@ -29,5 +29,5 @@ class DBHelper:
             self.cur.execute(sql)
             self.con.commit()
             self.__disconnect__()
-        except Exception as ex:
+        except MySQLError as ex:
             print(ex.message)

@@ -41,8 +41,13 @@ def insert_recommendation(project_id, requirement_id, base_date, sample, steps):
     DBHelper().execute(u"INSERT INTO recommendations (project_id, requirement_id, base_date, sample, steps) "
                        u"VALUES (%s, %s, '%s', %s, %s);" % (project_id, requirement_id, base_date, sample, steps))
 
+def delete_all_recommendations():
+    DBHelper().execute(u"TRUNCATE TABLE recommendations;")
+
+
 
 steps, distance, sample, counter = 3, 0.3, 0.7, 0
+delete_all_recommendations()
 projects = get_all_projects()
 
 for i, prj in enumerate(projects):
@@ -52,7 +57,7 @@ for i, prj in enumerate(projects):
     for i, pc in enumerate(projects_to_compare):
         if (prj['id'] == pc['id']): continue
 
-        print(u'proj: %s: prj_to_compare: %s' % (prj['id'], pc['id']))
+        print(u'proj: %s, prj_to_compare: %s' % (prj['id'], pc['id']))
 
         requirements_to_compare = get_requirements_by_code(pc['code'])
         loop = min(int(round(len(requirements) * sample)), len(requirements_to_compare))
@@ -61,16 +66,20 @@ for i, prj in enumerate(projects):
         for i in range(loop):
             compare = get_requirements_distance(requirements[i]['id'], requirements_to_compare[i]['id'])
 
-            if (compare['distance'] < distance): counter += 1
+            if (compare is None): continue
+            if (compare['distance'] <= distance): counter += 1
             else : counter = 0
 
             print(u'coun: %s: req_a: %s req_b: %s distance: %s' %
                  (counter, requirements[i]['id'],requirements_to_compare[i]['id'], compare['distance']))
 
-            if (counter == steps):
-                counter = 0
-                insert_recommendation(prj['id'], requirements[i+1]['id'], requirements[i]['added'], sample, steps)
-                print(u'rec : %s' % requirements[i + 1]['id'])
+            if (counter == steps and i != len(requirements_to_compare)):
+                try:
+                    counter = 0
+                    insert_recommendation(prj['id'], requirements_to_compare[i+1]['id'], requirements[i]['added'], sample, steps)
+                    print(u'rec : %s' % requirements[i + 1]['id'])
+                except Exception as ex:
+                    print(ex.message)
 
 
 
