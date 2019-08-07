@@ -30,4 +30,4 @@ class DBHelper:
             self.con.commit()
             self.__disconnect__()
         except MySQLError as ex:
-            print(ex.message)
+            print(ex)

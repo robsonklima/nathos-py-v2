@@ -37,16 +37,15 @@ def get_requirements_distance(req_a_id, req_b_id):
 
     return None
 
-def insert_recommendation(project_id, requirement_id, base_date, sample, steps):
-    DBHelper().execute(u"INSERT INTO recommendations (project_id, requirement_id, base_date, sample, steps) "
-                       u"VALUES (%s, %s, '%s', %s, %s);" % (project_id, requirement_id, base_date, sample, steps))
+def insert_recommendation(project_id, requirement_id, base_date, distance, sample, steps):
+    DBHelper().execute(u"INSERT INTO recommendations (project_id, requirement_id, base_date, distance, sample, steps) "
+                       u"VALUES (%s, %s, '%s', %s, %s);" % (project_id, requirement_id, base_date, distance, sample, steps))
 
 def delete_all_recommendations():
     DBHelper().execute(u"TRUNCATE TABLE recommendations;")
 
 
-
-steps, distance, sample, counter = 3, 0.3, 0.7, 0
+distance, sample, steps, counter = 0.3, 0.7, 3, 0
 delete_all_recommendations()
 projects = get_all_projects()
 
@@ -76,10 +75,10 @@ for i, prj in enumerate(projects):
             if (counter == steps and i != len(requirements_to_compare)):
                 try:
                     counter = 0
-                    insert_recommendation(prj['id'], requirements_to_compare[i+1]['id'], requirements[i]['added'], sample, steps)
+                    insert_recommendation(prj['id'], requirements_to_compare[i+1]['id'], requirements[i]['added'], distance, sample, steps)
                     print(u'rec : %s' % requirements[i + 1]['id'])
                 except Exception as ex:
-                    print(ex.message)
+                    print(ex)
 
 
 
