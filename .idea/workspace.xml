@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d889f3b-2fad-45e1-a1c2-88f0d47a250d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/distance.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recommendation.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommendation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,14 +16,15 @@
       <file leaf-file-name="recommendation.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recommendation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+            <state relative-caret-position="136">
+              <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" />
                 <element signature="e#497#548#0" />
                 <element signature="e#226#369#0" />
                 <element signature="e#402#550#0" />
                 <element signature="e#590#685#0" />
+                <element signature="e#748#1392#0" />
                 <element signature="e#727#807#0" />
                 <element signature="e#864#1058#0" />
                 <element signature="e#1774#2014#0" />
@@ -92,11 +90,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="273" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="23" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="1008" />
+    <option name="width" value="1238" />
+    <option name="height" value="729" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -392,19 +390,26 @@
       <option name="project" value="LOCAL" />
       <updated>1565212029679</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="REF">
+      <created>1565346884067</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1565346884067</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="729" extended-state="6" />
+    <frame x="23" y="23" width="1238" height="729" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1683876" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17419885" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32911393" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.2943038" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" weight="0.2943038" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -431,9 +436,9 @@
     <MESSAGE value="Refactoring" />
     <MESSAGE value="try catch DBHelper execute method" />
     <MESSAGE value="Added database backup" />
-    <MESSAGE value="REF" />
     <MESSAGE value="Update database and DBHelper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update database and DBHelper" />
+    <MESSAGE value="REF" />
+    <option name="LAST_COMMIT_MESSAGE" value="REF" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -451,6 +456,7 @@
             <element signature="e#226#369#0" />
             <element signature="e#402#550#0" />
             <element signature="e#590#685#0" />
+            <element signature="e#748#1392#0" />
             <element signature="e#727#807#0" />
             <element signature="e#864#1058#0" />
             <element signature="e#1774#2014#0" />
@@ -476,6 +482,7 @@
             <element signature="e#226#369#0" />
             <element signature="e#402#550#0" />
             <element signature="e#590#685#0" />
+            <element signature="e#748#1392#0" />
             <element signature="e#727#807#0" />
             <element signature="e#864#1058#0" />
             <element signature="e#1774#2014#0" />
@@ -494,6 +501,7 @@
             <element signature="e#226#369#0" />
             <element signature="e#402#550#0" />
             <element signature="e#590#685#0" />
+            <element signature="e#748#1392#0" />
             <element signature="e#727#807#0" />
             <element signature="e#864#1058#0" />
             <element signature="e#1774#2014#0" />
@@ -574,14 +582,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recommendation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+        <state relative-caret-position="136">
+          <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" />
             <element signature="e#497#548#0" />
             <element signature="e#226#369#0" />
             <element signature="e#402#550#0" />
             <element signature="e#590#685#0" />
+            <element signature="e#748#1392#0" />
             <element signature="e#727#807#0" />
             <element signature="e#864#1058#0" />
             <element signature="e#1774#2014#0" />

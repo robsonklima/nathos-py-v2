@@ -72,6 +72,7 @@ for i, prj in enumerate(projects):
 
         requirements_to_compare = get_requirements_by_code(pc['code'])
         loop = min(int(round(len(requirements) * sample)), len(requirements_to_compare))
+
         print(u'samp: %s' % (loop))
 
         for i in range(loop):
@@ -88,6 +89,7 @@ for i, prj in enumerate(projects):
                 try:
                     counter = 0
                     insert_recommendation(prj['id'], requirements_to_compare[i+1]['id'], requirements[i]['added'], distance, sample, steps)
+
                     print(u'rec : %s' % requirements[i + 1]['id'])
                 except Exception as ex:
                     print(ex)
