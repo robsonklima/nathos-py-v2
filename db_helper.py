@@ -13,13 +13,13 @@ class DBHelper:
             self.con = pymysql.connect(host=self.host, user=self.user, password=self.password,
                                        db=self.db, cursorclass=pymysql.cursors.DictCursor)
             self.cur = self.con.cursor()
-        except MySQLError as ex:
+        except pymysql.MySQLError as ex:
             print(ex)
 
     def __disconnect__(self):
         try:
             self.con.close()
-        except MySQLError as ex:
+        except pymysql.MySQLError as ex:
             print(ex)
 
     def fetch(self, sql):
@@ -30,7 +30,7 @@ class DBHelper:
             self.__disconnect__()
 
             return result
-        except MySQLError as ex:
+        except pymysql.MySQLError as ex:
             print(ex)
 
     def execute(self, sql):
@@ -39,5 +39,5 @@ class DBHelper:
             self.cur.execute(sql)
             self.con.commit()
             self.__disconnect__()
-        except MySQLError as ex:
+        except pymysql.MySQLError as ex:
             print(ex)
