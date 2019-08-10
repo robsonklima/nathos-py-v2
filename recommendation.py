@@ -50,14 +50,16 @@ def get_requirements_distance(req_a_id, req_b_id):
     return None
 
 def insert_recommendation(project_id, requirement_id, base_date, distance, sample, steps):
-    DBHelper().execute(u"INSERT INTO recommendations (project_id, requirement_id, base_date, distance, sample, steps) "
-                       u"VALUES (%s, %s, '%s', %s, %s, %s);" % (project_id, requirement_id, base_date, distance, sample, steps))
+    DBHelper().execute(u" INSERT INTO recommendations"
+                       u"             (project_id, requirement_id, base_date, distance, sample, steps)"
+                       u" VALUES      (%s, %s, '%s', %s, %s, %s);"
+                       % (project_id, requirement_id, base_date, distance, sample, steps))
 
 def delete_all_recommendations():
     DBHelper().execute(u"TRUNCATE TABLE recommendations;")
 
 
-distance, sample, steps, counter = 0.3, 0.7, 3, 0
+distance, sample, steps, counter = 0.3, 0.7, 5, 0
 #delete_all_recommendations()
 projects = get_projects_non_processed(distance, sample, steps)
 
@@ -71,7 +73,7 @@ for i, prj in enumerate(projects):
         print(u'proj: %s, prj_to_compare: %s' % (prj['id'], pc['id']))
 
         requirements_to_compare = get_requirements_by_code(pc['code'])
-        loop = min(int(round(len(requirements) * sample)), len(requirements_to_compare))
+        loop = min(int(round(len(requirements) * sample)), (len(requirements_to_compare)-1))
 
         print(u'samp: %s' % (loop))
 

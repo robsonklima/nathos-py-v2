@@ -31,7 +31,5 @@ for i, rec in enumerate(recommendations):
 
     for i, req in enumerate(requirements):
         print(req)
-        # aqui tem que comparar a distance entre o requisito recomendado e os demais requisitos do projeto
+        # aqui tem que comparar a distancia entre o requisito recomendado e os demais requisitos do projeto
         # que ocorreram depois, considerando a distancia parametrizada durante a recomendação (rec['distance'])
-
-
