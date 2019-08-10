@@ -10,6 +10,19 @@ from nltk import download
 from db_helper import DBHelper
 
 
+def delete_all_requirements_distance():
+    DBHelper().execute(u"TRUNCATE TABLE requirements_distance;")
+
+def get_all_requirements():
+    return DBHelper().fetch(u"SELECT * FROM requirements WHERE description_en IS NOT NULL;")
+
+def insert_requirement_distance(req_a_id, req_b_id, distance):
+    DBHelper().execute(u" INSERT INTO requirements_distance "
+                       u" (req_a_id, req_b_id, distance) "
+                       u" VALUES (%s, %s, %s);"
+                       % (req_a_id, req_b_id, distance))
+
+
 dir = os.path.dirname(__file__)
 download(u'stopwords', quiet=True)
 stop_words = set(stopwords.words(u'english'))
@@ -17,8 +30,8 @@ file = u'/data/GoogleNews-vectors-negative300.bin.gz'
 model = gensim.models.KeyedVectors.load_word2vec_format(dir + file, binary=True) #limit=500000
 model.init_sims(replace=True)
 
-DBHelper().execute(u"TRUNCATE TABLE requirements_distance;")
-requirements = DBHelper().fetch(u"SELECT * FROM requirements WHERE description_en IS NOT NULL;")
+delete_all_requirements_distance()
+requirements = get_all_requirements()
 
 for i, req_a in enumerate(requirements):
     sentence_a = req_a['description_en']
@@ -31,5 +44,4 @@ for i, req_a in enumerate(requirements):
 
         if (distance == 0): continue
 
-        DBHelper().execute(u"INSERT INTO requirements_distance (req_a_id, req_b_id, distance) "
-                           u"VALUES (%s, %s, %s);" % (req_a['id'], req_b['id'], distance))
+        insert_requirement_distance(req_a['id'], req_b['id'], distance)

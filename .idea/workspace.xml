@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d889f3b-2fad-45e1-a1c2-88f0d47a250d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/evaluation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/recommendations.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/db_v1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/db_v1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/distance.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,10 +17,15 @@
       <file leaf-file-name="recommendation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recommendation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="28" column="56" lean-forward="true" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+            <state relative-caret-position="35">
+              <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="55" />
               <folding>
-                <element signature="e#47#77#0" expanded="true" />
+                <element signature="e#140#191#0" />
+                <element signature="e#224#367#0" />
+                <element signature="e#400#548#0" />
+                <element signature="e#590#685#0" />
+                <element signature="e#748#1414#0" />
+                <element signature="e#1456#1536#0" />
                 <element signature="e#1593#1787#0" />
                 <element signature="e#1884#2128#0" />
                 <element signature="e#2168#2222#0" />
@@ -32,15 +34,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="evaluation.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="evaluation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="34" column="108" selection-start-line="34" selection-start-column="108" selection-end-line="34" selection-end-column="108" />
+            <state relative-caret-position="180">
+              <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding>
                 <element signature="e#140#191#0" />
                 <element signature="e#243#402#0" />
                 <element signature="e#461#753#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="distance.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/distance.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+              <folding>
+                <element signature="e#250#310#0" />
+                <element signature="e#354#442#0" />
               </folding>
             </state>
           </provider>
@@ -91,24 +106,24 @@
         <option value="$PROJECT_DIR$/random.py" />
         <option value="$PROJECT_DIR$/project.py" />
         <option value="$PROJECT_DIR$/connection.py" />
-        <option value="$PROJECT_DIR$/random_date.py" />
         <option value="$PROJECT_DIR$/translate.py" />
         <option value="$PROJECT_DIR$/import.py" />
         <option value="$PROJECT_DIR$/classify.py" />
         <option value="$PROJECT_DIR$/compare.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/distance.py" />
         <option value="$PROJECT_DIR$/db_helper.py" />
-        <option value="$PROJECT_DIR$/recommendation.py" />
         <option value="$PROJECT_DIR$/evaluation.py" />
+        <option value="$PROJECT_DIR$/recommendation.py" />
+        <option value="$PROJECT_DIR$/random_date.py" />
+        <option value="$PROJECT_DIR$/distance.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="23" />
+    <option name="x" value="87" />
     <option name="y" value="23" />
-    <option name="width" value="1238" />
-    <option name="height" value="729" />
+    <option name="width" value="1745" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -157,7 +172,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.evaluation">
+  <component name="RunManager" selected="Python.recommendation">
     <configuration name="classify" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="nhatos-py-v2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -259,8 +274,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.evaluation" />
         <item itemvalue="Python.recommendation" />
+        <item itemvalue="Python.evaluation" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.classify" />
         <item itemvalue="Python.translate" />
@@ -418,17 +433,31 @@
       <option name="project" value="LOCAL" />
       <updated>1565382622200</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added evaluation">
+      <created>1565384533494</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1565384533494</updated>
+    </task>
+    <task id="LOCAL-00022" summary="REF and fixed last object counter of recommendation">
+      <created>1565401026721</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1565401026721</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="23" y="23" width="1238" height="729" extended-state="0" />
+    <frame x="87" y="23" width="1745" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17419885" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.118909515" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32911393" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.2943038" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.20417124" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -459,7 +488,9 @@
     <MESSAGE value="Added database backup" />
     <MESSAGE value="Update database and DBHelper" />
     <MESSAGE value="REF" />
-    <option name="LAST_COMMIT_MESSAGE" value="REF" />
+    <MESSAGE value="Added evaluation" />
+    <MESSAGE value="REF and fixed last object counter of recommendation" />
+    <option name="LAST_COMMIT_MESSAGE" value="REF and fixed last object counter of recommendation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -529,24 +560,10 @@
     <entry file="file://$PROJECT_DIR$/a.py" />
     <entry file="file://$PROJECT_DIR$/project.py" />
     <entry file="file://$PROJECT_DIR$/connection.py" />
-    <entry file="file://$PROJECT_DIR$/random_date.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/translate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/import.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -574,13 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/distance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="34" column="90" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -588,12 +598,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/import.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random_date.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding>
+            <element signature="e#153#354#0" />
+            <element signature="e#388#456#0" />
+            <element signature="e#486#537#0" />
+            <element signature="e#571#626#0" />
+            <element signature="e#505#656#0" />
+            <element signature="e#705#870#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/recommendation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="28" column="56" lean-forward="true" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+        <state relative-caret-position="35">
+          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="55" />
           <folding>
-            <element signature="e#47#77#0" expanded="true" />
+            <element signature="e#140#191#0" />
+            <element signature="e#224#367#0" />
+            <element signature="e#400#548#0" />
+            <element signature="e#590#685#0" />
+            <element signature="e#748#1414#0" />
+            <element signature="e#1456#1536#0" />
             <element signature="e#1593#1787#0" />
             <element signature="e#1884#2128#0" />
             <element signature="e#2168#2222#0" />
@@ -603,12 +640,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="34" column="108" selection-start-line="34" selection-start-column="108" selection-end-line="34" selection-end-column="108" />
+        <state relative-caret-position="180">
+          <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding>
             <element signature="e#140#191#0" />
             <element signature="e#243#402#0" />
             <element signature="e#461#753#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="e#250#310#0" />
+            <element signature="e#354#442#0" />
           </folding>
         </state>
       </provider>
