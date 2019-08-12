@@ -42,12 +42,11 @@ def get_requirements_by_code(code):
     return DBHelper().fetch(u"SELECT * FROM requirements WHERE code='%s';" % (code))
 
 def get_requirements_distance(req_a_id, req_b_id):
-    distance = DBHelper().fetch(u"SELECT * FROM requirements_distance WHERE req_a_id=%s AND req_b_id=%s;" % (req_a_id, req_b_id))
-
-    if (len(distance)):
-        return distance[0]
-
-    return None
+    distance = DBHelper().fetch(u" SELECT * "
+                                u" FROM   requirements_distance "
+                                u" WHERE  req_a_id=%s "
+                                u" AND    req_b_id=%s;"
+                                %  (req_a_id, req_b_id))
 
 def insert_recommendation(project_id, requirement_id, base_date, distance, sample, steps):
     DBHelper().execute(u" INSERT INTO recommendations"
@@ -59,7 +58,7 @@ def delete_all_recommendations():
     DBHelper().execute(u"TRUNCATE TABLE recommendations;")
 
 
-distance, sample, steps, counter = 0.3, 0.7, 5, 0
+distance, sample, steps, counter = 0.25, 0.7, 3, 0
 #delete_all_recommendations()
 projects = get_projects_non_processed(distance, sample, steps)
 
