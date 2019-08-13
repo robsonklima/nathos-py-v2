@@ -5,9 +5,10 @@ from operator import attrgetter
 
 
 def get_all_recommendations():
-    return DBHelper().fetch(u'SELECT    * '
-                            u'FROM      recommendations'
-                            u'ORDER BY  id;')
+    return DBHelper().fetch(u" SELECT 	*" 
+                            u" FROM 	recommendations"
+                            u" WHERE	id NOT IN (SELECT recommendation_id FROM evaluations)"
+                            u" ORDER BY id;")
 
 def get_requirements_by_id(id):
     requirements = DBHelper().fetch(u"SELECT * FROM requirements WHERE id=%s;" % (id))
@@ -38,15 +39,15 @@ def get_requirements_by_date(project_id, base_date):
 
 def insert_evaluation(recommendation_id, is_assertive):
     DBHelper().execute(u" INSERT INTO evaluations"
-                     u"             (recommendation_id, is_assertive)"
-                     u" VALUES      (%s, %s);"
-                     % (recommendation_id, is_assertive))
+                       u"             (recommendation_id, is_assertive)"
+                       u" VALUES      (%s, %s);"
+                       % (recommendation_id, is_assertive))
 
 def delete_all_evaluations():
     DBHelper().execute(u"TRUNCATE TABLE evaluations;")
 
 
-delete_all_evaluations()
+#delete_all_evaluations()
 recommendations = get_all_recommendations()
 
 for i, rec in enumerate(recommendations):

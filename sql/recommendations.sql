@@ -6,15 +6,14 @@ SELECT 			distance, sample, steps, COUNT(1) amount
 FROM 			recommendations r
 GROUP BY 	distance, sample, steps;
 
-
 SELECT			*
 FROM 			evaluations;
 
 SELECT			rec.distance, rec.sample, rec.steps,
 						CASE
 							WHEN e.is_assertive = 1 
-                            THEN 'YEAP' 
-                            ELSE 'NOPE' 
+                            THEN 'Y' 
+                            ELSE 'N' 
 						END assertive, 
                         count(1) amount
 FROM 			evaluations e

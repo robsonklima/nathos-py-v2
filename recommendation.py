@@ -48,6 +48,11 @@ def get_requirements_distance(req_a_id, req_b_id):
                                 u" AND    req_b_id=%s;"
                                 %  (req_a_id, req_b_id))
 
+    if (len(distance)):
+        return distance[0]
+
+    return None
+
 def insert_recommendation(project_id, requirement_id, base_date, distance, sample, steps):
     DBHelper().execute(u" INSERT INTO recommendations"
                        u"             (project_id, requirement_id, base_date, distance, sample, steps)"
@@ -58,7 +63,7 @@ def delete_all_recommendations():
     DBHelper().execute(u"TRUNCATE TABLE recommendations;")
 
 
-distance, sample, steps, counter = 0.25, 0.7, 3, 0
+distance, sample, steps, counter = 0.35, 0.7, 3, 0
 #delete_all_recommendations()
 projects = get_projects_non_processed(distance, sample, steps)
 
@@ -72,7 +77,7 @@ for i, prj in enumerate(projects):
         print(u'proj: %s, prj_to_compare: %s' % (prj['id'], pc['id']))
 
         requirements_to_compare = get_requirements_by_code(pc['code'])
-        loop = min(int(round(len(requirements) * sample)), (len(requirements_to_compare)-1))
+        loop = min(int(round(len(requirements) * sample)), len(requirements_to_compare))
 
         print(u'samp: %s' % (loop))
 
@@ -80,7 +85,7 @@ for i, prj in enumerate(projects):
             compare = get_requirements_distance(requirements[i]['id'], requirements_to_compare[i]['id'])
 
             if (compare is None): continue
-            if (compare['distance'] <= distance): counter += 1
+            if (compare['distance'] <= distance):counter += 1
             else : counter = 0
 
             print(u'coun: %s: req_a: %s req_b: %s distance: %s' %
