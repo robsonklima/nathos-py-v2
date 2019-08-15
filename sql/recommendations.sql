@@ -19,4 +19,5 @@ SELECT			rec.distance, rec.sample, rec.steps,
 FROM 			evaluations e
 INNER JOIN	recommendations rec ON rec.id = e.recommendation_id
 INNER	JOIN	projects p ON p.id = rec.project_id
-GROUP BY		rec.distance, rec.sample, rec.steps, e.is_assertive;
+WHERE			CAST(rec.distance AS DECIMAL(5,2)) = 0.30
+GROUP BY		rec.distance, rec.sample, rec.steps, assertive;
