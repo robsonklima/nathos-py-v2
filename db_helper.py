@@ -20,7 +20,7 @@ class DBHelper:
         try:
             self.con.close()
         except pymysql.MySQLError as ex:
-            print(ex)
+            print(ex, sql)
 
     def fetch(self, sql):
         try:
@@ -31,7 +31,7 @@ class DBHelper:
 
             return result
         except pymysql.MySQLError as ex:
-            print(ex)
+            print(ex, sql)
 
     def execute(self, sql):
         try:
@@ -40,4 +40,4 @@ class DBHelper:
             self.con.commit()
             self.__disconnect__()
         except pymysql.MySQLError as ex:
-            print(ex)
+            print(ex, sql)

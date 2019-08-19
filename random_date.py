@@ -21,6 +21,9 @@ def get_all_projects():
 def get_all_requirements():
     return DBHelper().fetch(u'SELECT * FROM requirements;')
 
+def get_all_risks():
+    return DBHelper().fetch(u'SELECT * FROM risks;')
+
 def update_project(project_id):
     DBHelper().execute(
         u"UPDATE projects SET added='%s' WHERE id=%s;"
@@ -29,15 +32,26 @@ def update_project(project_id):
 def update_requirement(requirement_id):
     DBHelper().execute(
         u"UPDATE requirements SET added='%s' WHERE id=%s;"
-        % randomDate(u"2017-01-01 00:00:01", u"2017-10-30 23:59:59"), p['id'])
+        % (randomDate(u"2017-01-01 00:00:01", u"2017-10-30 23:59:59"), requirement_id))
+
+def update_risk(risk_id):
+    DBHelper().execute(
+        u"UPDATE risks SET added='%s' WHERE id=%s;"
+        % (randomDate(u"2017-01-01 00:00:01", u"2017-10-30 23:59:59"), risk_id))
 
 
-projects = get_all_projects()
+#projects = get_all_projects()
 
-for i, p in enumerate(projects):
-    update_project(p['id'])
+#for i, prj in enumerate(projects):
+#    update_project(prj['id'])
 
-requirements = get_all_requirements()
+#requirements = get_all_requirements()
 
-for i, r in enumerate(requirements):
-    update_requirement(r['id'])
+#for i, req in enumerate(requirements):
+#    update_requirement(req['id'])
+
+risks = get_all_risks()
+
+for i, ris in enumerate(risks):
+    update_risk(ris['id'])
+

@@ -26,17 +26,18 @@ def get_project_by_rand():
 def get_projects_by_domain(domain):
     return DBHelper().fetch(u"SELECT * FROM projects WHERE domain='%s' ORDER BY added;" % (domain))
 
-def get_projects_non_processed(distance, sample, steps):
-    return DBHelper().fetch(u' SELECT   p.*' 
-                            u' FROM     projects p' 
-                            u' WHERE    p.id NOT IN(' 
-                            u'              SELECT project_id' 
-                            u'              FROM   recommendations' 
-                            u'              WHERE  CAST(distance AS DECIMAL(5,1)) = %s' 
-                            u'              AND    CAST(sample AS DECIMAL(5,1)) = %s' 
-                            u'              AND	   CAST(steps AS DECIMAL(5,1)) = %s' 
-                            u'          )'
-                            u' ORDER BY p.id ASC' % (distance, sample, steps))
+def get_projects_non_processed(distance, sample, steps, type):
+    return DBHelper().fetch(u" SELECT   p.*" 
+                            u" FROM     projects p" 
+                            u" WHERE    p.id NOT IN(" 
+                            u"              SELECT project_id"
+                            u"              FROM   recommendations" 
+                            u"              WHERE  CAST(distance AS DECIMAL(5,1)) = %s" 
+                            u"              AND    CAST(sample AS DECIMAL(5,1)) = %s" 
+                            u"              AND	   CAST(steps AS DECIMAL(5,1)) = %s" 
+                            u"              AND    type = '%s'"
+                            u"          )"
+                            u" ORDER BY p.id ASC" % (distance, sample, steps, type))
 
 def get_requirements_by_code(code):
     return DBHelper().fetch(u"SELECT * FROM requirements WHERE code='%s';" % (code))
@@ -53,19 +54,19 @@ def get_requirements_distance(req_a_id, req_b_id):
 
     return None
 
-def insert_recommendation(project_id, requirement_id, base_date, distance, sample, steps):
+def insert_recommendation(project_id, requirement_id, base_date, distance, sample, steps, type):
     DBHelper().execute(u" INSERT INTO recommendations"
-                       u"             (project_id, requirement_id, base_date, distance, sample, steps)"
-                       u" VALUES      (%s, %s, '%s', %s, %s, %s);"
-                       % (project_id, requirement_id, base_date, distance, sample, steps))
+                       u"             (project_id, requirement_id, base_date, distance, sample, steps, type)"
+                       u" VALUES      (%s, %s, '%s', %s, %s, %s, '%s');"
+                       % (project_id, requirement_id, base_date, distance, sample, steps, type))
 
-def delete_all_recommendations():
-    DBHelper().execute(u"TRUNCATE TABLE recommendations;")
+def delete_all_recommendations(type):
+    DBHelper().execute(u"DELETE * FROM recommendations WHERE type = '%s';")
 
 
-distance, sample, steps, counter = 0.35, 0.7, 3, 0
-#delete_all_recommendations()
-projects = get_projects_non_processed(distance, sample, steps)
+distance, sample, steps, counter = 0.3, 0.7, 3, 0
+#delete_all_recommendations('REQUIREMENT')
+projects = get_projects_non_processed(distance, sample, steps, 'REQUIREMENT')
 
 for i, prj in enumerate(projects):
     requirements = get_requirements_by_code(prj['code'])
@@ -94,7 +95,7 @@ for i, prj in enumerate(projects):
             if (counter == steps and i != len(requirements_to_compare)):
                 try:
                     counter = 0
-                    insert_recommendation(prj['id'], requirements_to_compare[i+1]['id'], requirements[i]['added'], distance, sample, steps)
+                    insert_recommendation(prj['id'], requirements_to_compare[i+1]['id'], requirements[i]['added'], distance, sample, steps, 'REQUIREMENT')
 
                     print(u'rec : %s' % requirements[i + 1]['id'])
                 except Exception as ex:
