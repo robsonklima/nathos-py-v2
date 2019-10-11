@@ -61,7 +61,7 @@ def delete_recommendations_by_type(type):
     DBHelper().execute(u"DELETE FROM recommendations WHERE type='%s';")
 
 
-distance, sample, steps, counter = 0.3, 0.7, 3, 0
+distance, sample, steps, counter = 0.4, 0.8, 2, 0
 #delete_recommendations_by_type('RISK')
 projects = get_projects_non_processed(distance, sample, steps, 'RISK')
 

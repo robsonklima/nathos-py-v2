@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d889f3b-2fad-45e1-a1c2-88f0d47a250d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/random_risk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/risk_recom.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/distance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import.py" beforeDir="false" afterPath="$PROJECT_DIR$/import.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/random_date.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_date.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recommendation.py" beforeDir="false" afterPath="$PROJECT_DIR$/reqr_recom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/recommendations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/recommendations.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk_recom.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_recom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/ris_recom.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/ris_recom.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,54 +15,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="distance.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/distance.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
-              <folding>
-                <element signature="e#256#316#0" />
-                <element signature="e#355#408#0" />
-                <element signature="e#442#530#0" />
-                <element signature="e#557#638#0" />
-                <element signature="e#707#929#0" />
-                <element signature="e#993#1212#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="risk_recom.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="risk_recom.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/risk_recom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+            <state relative-caret-position="148">
+              <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
               <folding>
-                <element signature="e#140#262#0" />
-                <element signature="e#224#367#0" />
-                <element signature="e#590#685#0" />
-                <element signature="e#744#1607#0" />
-                <element signature="e#1524#1597#0" />
-                <element signature="e#1649#1991#0" />
-                <element signature="e#2087#2403#0" />
+                <element signature="e#140#352#0" />
+                <element signature="e#385#528#0" />
+                <element signature="e#570#665#0" />
+                <element signature="e#1633#1706#0" />
+                <element signature="e#1758#2100#0" />
+                <element signature="e#2196#2512#0" />
+                <element signature="e#2560#2627#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="evaluation.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="evaluation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
+            <state relative-caret-position="180">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
               <folding>
-                <element signature="e#147#377#0" />
+                <element signature="e#155#604#0" />
                 <element signature="e#641#800#0" />
-                <element signature="e#840#897#0" />
-                <element signature="e#631#976#0" />
-                <element signature="e#1419#1761#0" />
-                <element signature="e#1035#1344#0" />
-                <element signature="e#2127#2429#0" />
+                <element signature="e#830#961#0" />
+                <element signature="e#1018#1363#0" />
+                <element signature="e#1415#1757#0" />
+                <element signature="e#1816#2125#0" />
+                <element signature="e#2177#2479#0" />
+                <element signature="e#2541#2769#0" />
+                <element signature="e#2772#3428#1" />
               </folding>
             </state>
           </provider>
@@ -98,9 +76,9 @@
       <find>requiremene</find>
       <find>requireme</find>
       <find>require</find>
-      <find>req</find>
       <find>requirem</find>
       <find>get_requirements_by_id</find>
+      <find>req</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,16 +120,16 @@
         <option value="$PROJECT_DIR$/random_risk.py" />
         <option value="$PROJECT_DIR$/distance.py" />
         <option value="$PROJECT_DIR$/db_helper.py" />
-        <option value="$PROJECT_DIR$/risk_recom.py" />
         <option value="$PROJECT_DIR$/evaluation.py" />
+        <option value="$PROJECT_DIR$/risk_recom.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="50" />
+    <option name="x" value="90" />
     <option name="y" value="23" />
-    <option name="width" value="1817" />
-    <option name="height" value="1009" />
+    <option name="width" value="1746" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -515,7 +493,21 @@
       <option name="project" value="LOCAL" />
       <updated>1566004849740</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added risk cenarios">
+      <created>1566255865577</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1566255865577</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added data base backup v_2">
+      <created>1566256011126</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1566256011126</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -528,26 +520,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="23" width="1817" height="1009" extended-state="0" />
+    <frame x="90" y="23" width="1746" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11414254" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14956522" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32911393" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.18441273" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32894737" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.18530701" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32894737" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39846322" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39873418" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -568,11 +560,13 @@
     <MESSAGE value="REF and fixed last object counter of recommendation" />
     <MESSAGE value="Evaluations" />
     <MESSAGE value="REF" />
-    <option name="LAST_COMMIT_MESSAGE" value="REF" />
+    <MESSAGE value="Added risk cenarios" />
+    <MESSAGE value="Added data base backup v_2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added data base backup v_2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -580,16 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
           <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-          <folding>
-            <element signature="e#140#191#0" />
-            <element signature="e#224#367#0" />
-            <element signature="e#400#548#0" />
-            <element signature="e#590#685#0" />
-            <element signature="e#754#1489#0" />
-            <element signature="e#1531#1611#0" />
-            <element signature="e#1668#2013#0" />
-            <element signature="e#2462#2516#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -597,16 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#140#191#0" />
-            <element signature="e#224#367#0" />
-            <element signature="e#400#548#0" />
-            <element signature="e#590#685#0" />
-            <element signature="e#754#1489#0" />
-            <element signature="e#1531#1611#0" />
-            <element signature="e#1668#2013#0" />
-            <element signature="e#2462#2516#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,16 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
           <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#140#191#0" />
-            <element signature="e#224#367#0" />
-            <element signature="e#400#548#0" />
-            <element signature="e#590#685#0" />
-            <element signature="e#754#1489#0" />
-            <element signature="e#1531#1611#0" />
-            <element signature="e#1668#2013#0" />
-            <element signature="e#2462#2516#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -638,16 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
           <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
-          <folding>
-            <element signature="e#140#191#0" />
-            <element signature="e#224#367#0" />
-            <element signature="e#400#548#0" />
-            <element signature="e#590#685#0" />
-            <element signature="e#754#1489#0" />
-            <element signature="e#1531#1611#0" />
-            <element signature="e#1668#2013#0" />
-            <element signature="e#2462#2516#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,21 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/translate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#96#176#0" />
-            <element signature="e#210#294#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -715,16 +658,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="31" selection-start-line="31" selection-end-line="34" selection-end-column="87" />
-          <folding>
-            <element signature="e#47#60#0" expanded="true" />
-            <element signature="e#153#354#0" />
-            <element signature="e#388#456#0" />
-            <element signature="e#486#537#0" />
-            <element signature="e#571#626#0" />
-            <element signature="e#653#701#0" />
-            <element signature="e#739#892#0" />
-            <element signature="e#1136#1288#0" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -732,10 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#403#454#0" />
-            <element signature="e#493#590#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,69 +686,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding>
-            <element signature="e#140#191#0" />
-            <element signature="e#224#367#0" />
-            <element signature="e#400#548#0" />
-            <element signature="e#590#685#0" />
-            <element signature="e#754#1489#0" />
-            <element signature="e#1531#1611#0" />
-            <element signature="e#1668#2013#0" />
-            <element signature="e#2116#2446#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/distance.py">
+    <entry file="file://$PROJECT_DIR$/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+        <state relative-caret-position="180">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
           <folding>
-            <element signature="e#256#316#0" />
-            <element signature="e#355#408#0" />
-            <element signature="e#442#530#0" />
-            <element signature="e#557#638#0" />
-            <element signature="e#707#929#0" />
-            <element signature="e#993#1212#0" />
+            <element signature="e#155#604#0" />
+            <element signature="e#641#800#0" />
+            <element signature="e#830#961#0" />
+            <element signature="e#1018#1363#0" />
+            <element signature="e#1415#1757#0" />
+            <element signature="e#1816#2125#0" />
+            <element signature="e#2177#2479#0" />
+            <element signature="e#2541#2769#0" />
+            <element signature="e#2772#3428#1" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/risk_recom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+        <state relative-caret-position="148">
+          <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
           <folding>
-            <element signature="e#140#262#0" />
-            <element signature="e#224#367#0" />
-            <element signature="e#590#685#0" />
-            <element signature="e#744#1607#0" />
-            <element signature="e#1524#1597#0" />
-            <element signature="e#1649#1991#0" />
-            <element signature="e#2087#2403#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/evaluation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
-          <folding>
-            <element signature="e#147#377#0" />
-            <element signature="e#641#800#0" />
-            <element signature="e#840#897#0" />
-            <element signature="e#631#976#0" />
-            <element signature="e#1419#1761#0" />
-            <element signature="e#1035#1344#0" />
-            <element signature="e#2127#2429#0" />
+            <element signature="e#140#352#0" />
+            <element signature="e#385#528#0" />
+            <element signature="e#570#665#0" />
+            <element signature="e#1633#1706#0" />
+            <element signature="e#1758#2100#0" />
+            <element signature="e#2196#2512#0" />
+            <element signature="e#2560#2627#0" />
           </folding>
         </state>
       </provider>

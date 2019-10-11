@@ -1,7 +1,9 @@
-SELECT 			*
-FROM 			projects
-ORDER BY		rand()
-LIMIT 				24;
+SELECT 			p.*, COUNT(r.id) risks_amount
+FROM 			projects p
+INNER JOIN	risks r ON r.code = p.code
+#INNER JOIN	recommendations rec ON rec.risk_id = r.id
+GROUP BY		p.id
+ORDER BY		p.id;
 
 SELECT 			*
 FROM 			risks;
@@ -39,6 +41,7 @@ GROUP BY		rec.distance, rec.sample, rec.steps, assertive;
 
 SELECT			*
 FROM				evaluations
+WHERE 			added > '2019-08-19 08:54:41'
 ORDER BY 	1 DESC;
 
 #DELETE FROM evaluations where added > '2019-08-19 08:54:41';
