@@ -54,7 +54,7 @@ def get_requirements_distance(req_a_id, req_b_id):
 
     return None
 
-def insert_recommendation(project_id, requirement_id, base_date, distance, sample, steps, type):
+def insert_rec(project_id, requirement_id, base_date, distance, sample, steps, type):
     DBHelper().execute(u" INSERT INTO recommendations"
                        u"             (project_id, requirement_id, base_date, distance, sample, steps, type)"
                        u" VALUES      (%s, %s, '%s', %s, %s, %s, '%s');"
@@ -70,32 +70,33 @@ projects = get_projects_non_processed(distance, sample, steps, 'REQUIREMENT')
 
 for i, prj in enumerate(projects):
     requirements = get_requirements_by_code(prj['code'])
-    projects_to_compare = get_projects_by_domain(prj['domain'])
+    prj_to_compare = get_projects_by_domain(prj['domain'])
 
-    for i, pc in enumerate(projects_to_compare):
+    for i, pc in enumerate(prj_to_compare):
         if (prj['id'] == pc['id']): continue
 
         print(u'proj: %s, prj_to_compare: %s' % (prj['id'], pc['id']))
 
-        requirements_to_compare = get_requirements_by_code(pc['code'])
-        loop = min(int(round(len(requirements) * sample)), len(requirements_to_compare))
+        req_to_compare = get_requirements_by_code(pc['code'])
+        loop = min(int(round(len(requirements) * sample)), len(req_to_compare))
 
         print(u'samp: %s' % (loop))
 
         for i in range(loop):
-            compare = get_requirements_distance(requirements[i]['id'], requirements_to_compare[i]['id'])
+            compare = get_requirements_distance(requirements[i]['id'], req_to_compare[i]['id'])
 
             if (compare is None): continue
             if (compare['distance'] <= distance):counter += 1
             else : counter = 0
 
             print(u'coun: %s: req_a: %s req_b: %s distance: %s' %
-                 (counter, requirements[i]['id'],requirements_to_compare[i]['id'], compare['distance']))
+                  (counter, requirements[i]['id'], req_to_compare[i]['id'], compare['distance']))
 
-            if (counter == steps and i != len(requirements_to_compare)):
+            if (counter == steps and i != len(req_to_compare)):
                 try:
                     counter = 0
-                    insert_recommendation(prj['id'], requirements_to_compare[i+1]['id'], requirements[i]['added'], distance, sample, steps, 'REQUIREMENT')
+                    insert_rec(prj['id'], req_to_compare[i + 1]['id'], requirements[i]['added'],
+                               distance, sample, steps, 'REQUIREMENT')
 
                     print(u'rec : %s' % requirements[i + 1]['id'])
                 except Exception as ex:

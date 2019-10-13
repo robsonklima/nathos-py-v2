@@ -92,7 +92,8 @@ for i, prj in enumerate(projects):
             if (counter == steps and i != len(risks_to_compare)):
                 try:
                     counter = 0
-                    insert_recommendation(prj['id'], risks_to_compare[i+1]['id'], risks[i]['added'], distance, sample, steps, 'RISK')
+                    insert_recommendation(prj['id'], risks_to_compare[i+1]['id'], risks[i]['added'], distance,
+                                          sample, steps, 'RISK')
 
                     print(u'ris : %s' % risks[i + 1]['id'])
                 except Exception as ex:
