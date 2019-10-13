@@ -26,8 +26,8 @@ FROM 			evaluations;
 SELECT			rec.distance, rec.sample, rec.steps,
 						CASE
 							WHEN e.is_assertive = 1 
-                            THEN 'V' 
-                            ELSE '' 
+                            THEN 'Y' 
+                            ELSE 'N' 
 						END assertive, 
                         count(1) amount
 FROM 			evaluations e

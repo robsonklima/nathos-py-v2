@@ -6,7 +6,7 @@ class DBHelper:
         self.host = "127.0.0.1"
         self.user = "root"
         self.password = "root"
-        self.db = "nhatos_v2"
+        self.db = "nhatos_v3"
 
     def __connect__(self):
         try:
