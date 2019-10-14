@@ -22,6 +22,12 @@ def get_requirement_by_id(id):
 
     return None
 
+def update_recommendation(recommendation_id, is_assertive):
+    DBHelper().execute(u" UPDATE      recommendations"
+                       u" SET         is_assertive = %s"
+                       u" WHERE       id = %s;"
+                       % (is_assertive, recommendation_id))
+
 def get_risk_by_id(id):
     risks = DBHelper().fetch(u"SELECT * FROM risks WHERE id=%s;" % (id))
 
@@ -68,14 +74,7 @@ def get_risks_by_date(project_id, base_date):
                             u" WHERE	    p.id = %s"
                             u" AND 		    r.added >= '%s'" % (project_id, base_date))
 
-def insert_evaluation(recommendation_id, is_assertive):
-    DBHelper().execute(u" INSERT INTO evaluations"
-                       u"             (recommendation_id, is_assertive)"
-                       u" VALUES      (%s, %s);"
-                       % (recommendation_id, is_assertive))
 
-
-'''
 recommendations = get_recommendations_by_type('REQUIREMENT')
 
 for i, rec in enumerate(recommendations):
@@ -88,19 +87,4 @@ for i, rec in enumerate(recommendations):
         if (compare['distance'] <= rec['distance']): is_assertive = True
 
     print("rec: %s, prj: %s, assertive? %s" % (rec['id'], rec['project_id'], is_assertive))
-    insert_evaluation(rec['id'], (lambda assertive: 1 if is_assertive == True else 0)(is_assertive))'''
-
-
-recommendations = get_recommendations_by_type('RISK')
-
-for i, rec in enumerate(recommendations):
-    risks = get_risks_by_date(rec['project_id'], rec['base_date'])
-
-    is_assertive = False
-    for i, risk in enumerate(risks):
-        compare = get_risks_distance(rec['risk_id'], risks[i]['id'])
-        if (compare is None): continue
-        if (compare['distance'] <= rec['distance']): is_assertive = True
-
-    print("rec: %s, prj: %s, assertive? %s" % (rec['id'], rec['project_id'], is_assertive))
-    insert_evaluation(rec['id'], (lambda assertive: 1 if is_assertive == True else 0)(is_assertive))
+    update_recommendation(rec['id'], (lambda assertive: 1 if is_assertive == True else 0)(is_assertive))

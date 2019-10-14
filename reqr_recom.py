@@ -39,8 +39,8 @@ def get_projects_non_processed(distance, sample, steps, type):
                             u"          )"
                             u" ORDER BY p.id ASC" % (distance, sample, steps, type))
 
-def get_requirements_by_code(code):
-    return DBHelper().fetch(u"SELECT * FROM requirements WHERE code='%s';" % (code))
+def get_requirements_by_project_id(project_id):
+    return DBHelper().fetch(u"SELECT * FROM requirements WHERE project_id='%s';" % (project_id))
 
 def get_requirements_distance(req_a_id, req_b_id):
     distance = DBHelper().fetch(u" SELECT * "
@@ -69,7 +69,7 @@ distance, sample, steps, counter = 0.3, 0.7, 3, 0
 projects = get_projects_non_processed(distance, sample, steps, 'REQUIREMENT')
 
 for i, prj in enumerate(projects):
-    requirements = get_requirements_by_code(prj['code'])
+    requirements = get_requirements_by_project_id(prj['id'])
     prj_to_compare = get_projects_by_domain(prj['domain'])
 
     for i, pc in enumerate(prj_to_compare):
@@ -77,7 +77,7 @@ for i, prj in enumerate(projects):
 
         print(u'proj: %s, prj_to_compare: %s' % (prj['id'], pc['id']))
 
-        req_to_compare = get_requirements_by_code(pc['code'])
+        req_to_compare = get_requirements_by_project_id(pc['id'])
         loop = min(int(round(len(requirements) * sample)), len(req_to_compare))
 
         print(u'samp: %s' % (loop))
