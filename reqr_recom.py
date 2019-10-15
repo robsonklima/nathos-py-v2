@@ -73,7 +73,7 @@ def delete_recommendations(distance, sample, steps, type):
                        % (distance, sample, steps, type))
 
 
-distance, steps, sample, counter, type = 0.35, 4, 0.7, 0, 'REQUIREMENT'
+distance, steps, sample, counter, type = 0.25, 5, 0.7, 0, 'REQUIREMENT'
 delete_recommendations(distance, sample, steps, type)
 projects = get_projects_non_processed(distance, sample, steps, type)
 

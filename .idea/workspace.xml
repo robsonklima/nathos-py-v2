@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,6 +102,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,7 +114,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -512,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571147207439</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="REF">
+      <created>1571149845563</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1571149845563</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView">
@@ -532,7 +539,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32911393" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32894737" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.2658228" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" weight="0.2658228" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32894737" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -567,9 +574,9 @@
     <MESSAGE value="Added data base backup v_2" />
     <MESSAGE value="NEW SQL Files" />
     <MESSAGE value="REFACTOR recommendations and evaluations in DB" />
-    <MESSAGE value="REF" />
     <MESSAGE value="Refactoring database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring database" />
+    <MESSAGE value="REF" />
+    <option name="LAST_COMMIT_MESSAGE" value="REF" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -584,6 +591,78 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/reqr_recom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="80" column="8" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+          <folding>
+            <element signature="e#140#191#0" />
+            <element signature="e#224#367#0" />
+            <element signature="e#400#548#0" />
+            <element signature="e#590#685#0" />
+            <element signature="e#754#1489#0" />
+            <element signature="e#1543#1635#0" />
+            <element signature="e#1692#2037#0" />
+            <element signature="e#2140#2470#0" />
+            <element signature="e#2514#2585#0" />
+            <element signature="e#2650#3099#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding>
+            <element signature="e#155#410#0" />
+            <element signature="e#447#606#0" />
+            <element signature="e#672#883#0" />
+            <element signature="e#913#1044#0" />
+            <element signature="e#1101#1446#0" />
+            <element signature="e#1498#1840#0" />
+            <element signature="e#1899#2212#0" />
+            <element signature="e#2264#2566#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reqr_recom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="77" column="66" selection-start-line="77" selection-start-column="66" selection-end-line="77" selection-end-column="66" />
+          <folding>
+            <element signature="e#140#191#0" />
+            <element signature="e#224#367#0" />
+            <element signature="e#400#548#0" />
+            <element signature="e#590#685#0" />
+            <element signature="e#754#1489#0" />
+            <element signature="e#1543#1635#0" />
+            <element signature="e#1692#2037#0" />
+            <element signature="e#2140#2470#0" />
+            <element signature="e#2514#2585#0" />
+            <element signature="e#2650#3099#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+          <folding>
+            <element signature="e#155#410#0" />
+            <element signature="e#447#606#0" />
+            <element signature="e#672#883#0" />
+            <element signature="e#913#1044#0" />
+            <element signature="e#1101#1446#0" />
+            <element signature="e#1498#1840#0" />
+            <element signature="e#1899#2212#0" />
+            <element signature="e#2264#2566#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reqr_recom.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
@@ -679,16 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
           <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
-          <folding>
-            <element signature="e#140#352#0" />
-            <element signature="e#385#528#0" />
-            <element signature="e#570#665#0" />
-            <element signature="e#734#1598#0" />
-            <element signature="e#1633#1706#0" />
-            <element signature="e#1758#2100#0" />
-            <element signature="e#2196#2512#0" />
-            <element signature="e#2560#2627#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,8 +805,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reqr_recom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="285">
+          <caret line="87" column="38" lean-forward="true" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
           <folding>
             <element signature="e#140#191#0" />
             <element signature="e#224#367#0" />
@@ -755,17 +824,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+        <state relative-caret-position="75">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding>
-            <element signature="e#155#604#0" />
-            <element signature="e#641#800#0" />
-            <element signature="e#866#1077#0" />
-            <element signature="e#1107#1238#0" />
-            <element signature="e#1295#1640#0" />
-            <element signature="e#1692#2034#0" />
-            <element signature="e#2093#2402#0" />
-            <element signature="e#2454#2756#0" />
+            <element signature="e#155#410#0" />
+            <element signature="e#447#606#0" />
+            <element signature="e#672#883#0" />
+            <element signature="e#913#1044#0" />
+            <element signature="e#1101#1446#0" />
+            <element signature="e#1498#1840#0" />
+            <element signature="e#1899#2212#0" />
+            <element signature="e#2264#2566#0" />
           </folding>
         </state>
       </provider>
