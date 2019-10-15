@@ -54,7 +54,7 @@ def get_requirements_distance(req_a_id, req_b_id):
 
     return None
 
-def insert_rec(project_id, requirement_id, base_date, distance, sample, steps, type):
+def insert_recommendation(project_id, requirement_id, base_date, distance, sample, steps, type):
     DBHelper().execute(u" INSERT INTO recommendations"
                        u"             (project_id, requirement_id, base_date, distance, sample, steps, type)"
                        u" VALUES      (%s, %s, '%s', %s, %s, %s, '%s');"
@@ -63,44 +63,40 @@ def insert_rec(project_id, requirement_id, base_date, distance, sample, steps, t
 def delete_all_recommendations(type):
     DBHelper().execute(u"DELETE * FROM recommendations WHERE type = '%s';")
 
+def delete_recommendations(distance, sample, steps, type):
+    DBHelper().execute(u" DELETE "
+                       u" FROM   recommendations "
+                       u" WHERE  CAST(distance AS DECIMAL(5,3))=CAST(%s AS DECIMAL(5,3))"
+                       u" AND    CAST(sample AS DECIMAL(5,3))=CAST(%s AS DECIMAL(5,3))"
+                       u" AND    CAST(steps AS DECIMAL(5,3))=CAST(%s AS DECIMAL(5,3))"
+                       u" AND    type='%s';"
+                       % (distance, sample, steps, type))
 
-distance, sample, steps, counter = 0.3, 0.7, 3, 0
-#delete_all_recommendations('REQUIREMENT')
-projects = get_projects_non_processed(distance, sample, steps, 'REQUIREMENT')
+
+distance, steps, sample, counter, type = 0.35, 4, 0.7, 0, 'REQUIREMENT'
+delete_recommendations(distance, sample, steps, type)
+projects = get_projects_non_processed(distance, sample, steps, type)
 
 for i, prj in enumerate(projects):
-    requirements = get_requirements_by_project_id(prj['id'])
-    prj_to_compare = get_projects_by_domain(prj['domain'])
+    try:
+        requirements = get_requirements_by_project_id(prj['id'])
+        prj_to_compare = get_projects_by_domain(prj['domain'])
+        print(u'Processing project %s' % prj['id'])
 
-    for i, pc in enumerate(prj_to_compare):
-        if (prj['id'] == pc['id']): continue
+        for i, pc in enumerate(prj_to_compare):
+            if (prj['id'] == pc['id']): continue
+            req_to_compare = get_requirements_by_project_id(pc['id'])
+            loop = min(int(round(len(requirements) * sample)), len(req_to_compare)) - 1
 
-        print(u'proj: %s, prj_to_compare: %s' % (prj['id'], pc['id']))
+            for i in range(loop):
+                compare = get_requirements_distance(requirements[i]['id'], req_to_compare[i]['id'])
+                if (compare is None): continue
+                if (compare['distance'] <= distance): counter += 1
+                else: counter = 0
 
-        req_to_compare = get_requirements_by_project_id(pc['id'])
-        loop = min(int(round(len(requirements) * sample)), len(req_to_compare))
-
-        print(u'samp: %s' % (loop))
-
-        for i in range(loop):
-            compare = get_requirements_distance(requirements[i]['id'], req_to_compare[i]['id'])
-
-            if (compare is None): continue
-            if (compare['distance'] <= distance):counter += 1
-            else : counter = 0
-
-            print(u'coun: %s: req_a: %s req_b: %s distance: %s' %
-                  (counter, requirements[i]['id'], req_to_compare[i]['id'], compare['distance']))
-
-            if (counter == steps and i != len(req_to_compare)):
-                try:
+                if (counter == steps and i != len(req_to_compare)):
                     counter = 0
-                    insert_rec(prj['id'], req_to_compare[i + 1]['id'], requirements[i]['added'],
-                               distance, sample, steps, 'REQUIREMENT')
-
-                    print(u'rec : %s' % requirements[i + 1]['id'])
-                except Exception as ex:
-                    print(ex)
-
-
-
+                    insert_recommendation(prj['id'], req_to_compare[i + 1]['id'], requirements[i]['added'],
+                                          distance, sample, steps, type)
+    except Exception as ex:
+        print(ex)

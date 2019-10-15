@@ -7,10 +7,7 @@ from operator import attrgetter
 def get_recommendations_by_type(type):
     return DBHelper().fetch(u" SELECT 	*" 
                             u" FROM 	recommendations"
-                            u" WHERE	id NOT IN ("
-                            u"                      SELECT recommendation_id "
-                            u"                      FROM evaluations"
-                            u"                     )"
+                            u" WHERE	is_assertive is NULL"
                             u" AND      type='%s'"
                             u" ORDER BY id;" % type)
 
@@ -24,8 +21,8 @@ def get_requirement_by_id(id):
 
 def update_recommendation(recommendation_id, is_assertive):
     DBHelper().execute(u" UPDATE      recommendations"
-                       u" SET         is_assertive = %s"
-                       u" WHERE       id = %s;"
+                       u" SET         is_assertive=%s"
+                       u" WHERE       id=%s;"
                        % (is_assertive, recommendation_id))
 
 def get_risk_by_id(id):
@@ -63,7 +60,7 @@ def get_risks_distance(risk_a_id, risk_b_id):
 def get_requirements_by_date(project_id, base_date):
     return DBHelper().fetch(u" SELECT 	    r.*"
                             u" FROM 		requirements r"
-                            u" INNER JOIN   projects p ON p.code = r.code"
+                            u" INNER JOIN   projects p ON p.id = r.project_id"
                             u" WHERE	    p.id = %s"
                             u" AND 		    r.added >= '%s'" % (project_id, base_date))
 
@@ -78,13 +75,16 @@ def get_risks_by_date(project_id, base_date):
 recommendations = get_recommendations_by_type('REQUIREMENT')
 
 for i, rec in enumerate(recommendations):
-    requirements = get_requirements_by_date(rec['project_id'], rec['base_date'])
+    try:
+        requirements = get_requirements_by_date(rec['project_id'], rec['base_date'])
 
-    is_assertive = False
-    for i, req in enumerate(requirements):
-        compare = get_requirements_distance(rec['requirement_id'], requirements[i]['id'])
-        if (compare is None): continue
-        if (compare['distance'] <= rec['distance']): is_assertive = True
+        is_assertive = False
+        for i, req in enumerate(requirements):
+            compare = get_requirements_distance(rec['requirement_id'], requirements[i]['id'])
+            if (compare is None): continue
+            if (compare['distance'] <= rec['distance']): is_assertive = True
 
-    print("rec: %s, prj: %s, assertive? %s" % (rec['id'], rec['project_id'], is_assertive))
-    update_recommendation(rec['id'], (lambda assertive: 1 if is_assertive == True else 0)(is_assertive))
+        print("rec: %s, prj: %s, assertive? %s" % (rec['id'], rec['project_id'], is_assertive))
+        update_recommendation(rec['id'], (lambda assertive: 1 if is_assertive == True else 0)(is_assertive))
+    except Exception as ex:
+        print(ex)

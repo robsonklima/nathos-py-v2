@@ -1,38 +1,30 @@
-SELECT			*
-FROM 			projects;
-
-SELECT			domain, COUNT(1) amount
-FROM 			projects
-GROUP BY		domain
-ORDER BY		amount DESC;
-
-SELECT			*
-FROM 			requirements;
-
-SELECT 			count(*)
-FROM 			requirements_distance;
-
-SELECT 			* 
-FROM 			recommendations
-ORDER BY		1 DESC;
-
-SELECT 			distance, sample, steps, COUNT(1) amount
-FROM 			recommendations r
-GROUP BY 	distance, sample, steps;
-
-SELECT			*
-FROM 			evaluations;
-
-SELECT			rec.distance, rec.sample, rec.steps,
-						CASE
-							WHEN e.is_assertive = 1 
-                            THEN 'Y' 
-                            ELSE 'N' 
-						END assertive, 
-                        count(1) amount
-FROM 			evaluations e
-INNER JOIN	recommendations rec ON rec.id = e.recommendation_id
-INNER	JOIN	projects p ON p.id = rec.project_id
-WHERE			rec.type = 'REQUIREMENT'
-AND				CAST(rec.distance AS DECIMAL(5,2)) = 0.30
-GROUP BY		rec.distance, rec.sample, rec.steps, assertive;
+SELECT 		distance, steps, sample, n_assertive, 
+					CAST(n_assertive/total*100 AS DECIMAL(5,2)) n_asser_p, assertive, 
+                    CAST(assertive/total*100 AS DECIMAL(5,2)) asser_p, total
+FROM 
+(
+	SELECT 			distance, steps, sample,
+							(
+								SELECT 	COUNT(1) 
+								FROM 	recommendations rb 
+								WHERE 	CAST(r.distance AS DECIMAL(5,3)) = CAST(rb.distance AS DECIMAL(5,3))
+								AND		CAST(r.steps AS DECIMAL(5,3)) = CAST(rb.steps AS DECIMAL(5,3))
+								AND		CAST(r.sample AS DECIMAL(5,3)) = CAST(rb.sample AS DECIMAL(5,3))
+								AND		rb.type = 'REQUIREMENT'
+								AND		rb.is_assertive = 0
+							) n_assertive,
+							(
+								SELECT 	COUNT(1) 
+								FROM 	recommendations rb 
+								WHERE 	CAST(r.distance AS DECIMAL(5,3)) = CAST(rb.distance AS DECIMAL(5,3))
+								AND		CAST(r.steps AS DECIMAL(5,3)) = CAST(rb.steps AS DECIMAL(5,3))
+								AND		CAST(r.sample AS DECIMAL(5,3)) = CAST(rb.sample AS DECIMAL(5,3))
+								AND		rb.type = 'REQUIREMENT'
+								AND		rb.is_assertive = 1
+							) assertive,
+							COUNT(1) total
+	FROM 			recommendations r
+	WHERE			r.type = 'REQUIREMENT'
+	GROUP BY 	distance, sample, steps
+) data
+ORDER BY 	distance, steps, sample
