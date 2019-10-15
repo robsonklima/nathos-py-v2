@@ -81,7 +81,7 @@ for i, prj in enumerate(projects):
     try:
         requirements = get_requirements_by_project_id(prj['id'])
         prj_to_compare = get_projects_by_domain(prj['domain'])
-        print(u'Processing project %s' % prj['id'])
+        print(u'Processing project %s/%s' % (prj['id'], len(projects)))
 
         for i, pc in enumerate(prj_to_compare):
             if (prj['id'] == pc['id']): continue
